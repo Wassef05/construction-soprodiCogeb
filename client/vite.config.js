@@ -8,7 +8,7 @@ export default defineConfig({
     strictPort: true,
     proxy: {
       '/soprodi': {
-        // target: 'http://localhost:4000/api',
+        // target: 'https://soprodi-back.netlify.app',
         target: 'http://localhost:4000',
 
         secure: false,
