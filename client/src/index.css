@@ -1,0 +1,84 @@
+@import 'flowbite/dist/flowbite.css';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@keyframes fadeUp {
+    from {
+      opacity: 0;
+      transform: translateY(200px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  
+@layer utilities {
+  .modal-open .navbar,
+  .modal-open .content,
+  .modal-open .footer {
+    @apply filter blur-lg pointer-events-none;
+  }
+
+  .modal-open {
+    @apply overflow-hidden;
+  }
+}
+
+  .fade-up {
+    animation: fadeUp 2s ease-out;
+  }
+  @keyframes fadeDown {
+    from {
+      opacity: 1;
+      transform: translateY(0px);
+    }
+    to {
+      opacity: 0;
+      transform: translateY(-200px);
+    }
+  }
+
+
+  .fade-down {
+    animation: fadeDown 1s ease-out;
+  }
+
+  .next-arrow, .prev-arrow {
+    position: absolute;
+    bottom: 100px;
+    cursor: pointer;
+    z-index: 10;
+  }
+  
+  .next-arrow {
+    right: 10px;
+  }
+  
+  .prev-arrow {
+    left: 10px;
+  }
+  
+  .text-white {
+    color: white;
+  }
+
+
+  @keyframes fadeLeft {
+    from {
+      opacity: 0;
+      transform: translateX(10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  
+  .fade-left {
+    animation: fadeLeft 2s ease-in-out;
+  }
+  
