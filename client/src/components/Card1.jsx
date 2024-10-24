@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import cov from "../img/CoverCard.png";
-import car from "../img/Card1.png";
+import {CoverCard} from "../img";
+import {Car} from "../img";
 import ModalComponent from "./CustomModal";
 
 export default function Card1() {
@@ -23,7 +23,7 @@ export default function Card1() {
     >
       <div
         style={{ 
-          backgroundImage: `url(${cov})`, 
+          backgroundImage: `url(${CoverCard})`, 
           bottom: '0', 
           left: '48px', 
           position: 'absolute' 
@@ -41,7 +41,7 @@ export default function Card1() {
             textAlign: "justify",
           }}
         >
-          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#F5B94C] text-center sm:text-left mb-6 sm:mb-8">
+          <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#0f04b4] text-center sm:text-left mb-6 sm:mb-8">
             À PROPOS
           </h1>
           <p className="font-playfair text-sm sm:text-base text-justify mb-4 leading-relaxed text-gray-800">
@@ -52,18 +52,18 @@ export default function Card1() {
             Construction des bâtiments et usines attribuées aux activités
             Industrielles.
           </p>
-          <p className="mt-4 text-lg sm:text-xl flex items-center gap-2">
-            <span className="text-[#F5B94C] cursor-pointer" onClick={openModal}>
+          <p className="mt-4 text-lg  sm:text-xl flex items-center gap-2">
+            <span className="text-[#0f04b4]  cursor-pointer" onClick={openModal}>
               VOIR PLUS
             </span>
-            <span className="text-[#F5B94C] text-lg">&#9654;</span>
+            <span className="text-#0f04b4] text-lg">&#9654;</span>
           </p>
         </div>
 
         {/* Image section */}
         <div className="w-full sm:w-1/2 mt-6 lg:mt-0 flex justify-center lg:justify-end">
           <img
-            src={car}
+            src={Car}
             alt="Card image"
             className="rounded-[30px] w-3/4 sm:w-3/4 lg:w-[22vw] h-auto shadow-3xl lg:shadow-[0px_10px_30px_rgba(0,0,0,0.4)] transition-transform duration-500 hover:scale-105 lg:mr-[10%]"
           />

@@ -1,11 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react"; 
 import { useParams, useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
-import "./Items.css"; // Import the CSS file for animations
+import "./Items.css"; 
 
 function Items() {
   const { currentUser } = useSelector((state) => state.user);
@@ -14,6 +14,7 @@ function Items() {
   const [post, setPost] = useState({});
   const [slides, setSlides] = useState([]);
   const [currentSlide, setCurrentSlide] = useState(0);
+  const sliderRef = useRef(null); 
 
   const loadPost = async () => {
     try {
@@ -40,7 +41,6 @@ function Items() {
     loadPost();
   }, [id]);
 
-  // Custom left and right arrows
   const CustomPrevArrow = (props) => {
     const { onClick } = props;
     return (
@@ -63,19 +63,11 @@ function Items() {
     infinite: slides.length > 1,
     slidesToShow: 1,
     centerMode: true,
-    centerPadding: "0", // Remove padding to align images
+    centerPadding: "0", 
     speed: 1500,
     arrows: true,
     prevArrow: <CustomPrevArrow />,
     nextArrow: <CustomNextArrow />,
-    responsive: [
-      {
-        breakpoint: 768,
-        settings: {
-          arrows: false, // Disable arrows on mobile
-        },
-      },
-    ],
     beforeChange: (oldIndex, newIndex) => {
       setCurrentSlide(newIndex);
     },
@@ -122,29 +114,43 @@ function Items() {
         </button>
       </div>
 
-      <div className="pt-8 h-full pb-40 relative">
-      <Slider {...settings}>
-  {slides.map((slide, index) => (
-    <div key={slide.id} className="p-8 sm:p-2 relative">
-      <div className="lg:flex items-center justify-center">
-        <div className="relative">
-          <img
-            src={slide.image}
-            alt={slide.title}
-            className="rounded-3xl uniform-size cursor-pointer"
-          />
+      <div className=" flex-col justify-center items-center pt-8 h-screen overflow-hidden relative">
+        <Slider ref={sliderRef} {...settings}>
+          {slides.map((slide, index) => (
+            <div key={slide.id} className="p-8 sm:p-2 relative">
+              <div className="lg:flex items-center justify-center">
+                <div className="relative">
+                  <img
+                    src={slide.image}
+                    alt={slide.title}
+                    className="rounded-3xl uniform-size cursor-pointer"
+                  />
+                </div>
+               
+                <div className={`mx-auto sm:max-w-[20vw] text-justify md:ml-8 mt-4 md:mt-0 ${index === currentSlide ? 'fade-up' : ''}`}>
+                  <h1 className="sm:text-2xl text-2xl mt-6 max-w-fit pt-10 border-b-4 font-semibold text-white text-center mb-2">
+                    {slide.title}
+                  </h1>
+                  <p className="text-white">{slide.description}</p>
+                </div>
+              </div>
+            </div>
+          ))}
+        </Slider>
+
+       
+        <div className="mobile-indicators">
+          <div className="indicator left" onClick={() => {
+            sliderRef.current.slickPrev(); 
+          }}>
+            &#10094; 
+          </div>
+          <div className="indicator right" onClick={() => {
+            sliderRef.current.slickNext(); 
+          }}>
+            &#10095; 
+          </div>
         </div>
-        {/* Ajoute l'animation uniquement si l'image est le slide actif */}
-        <div className={`mx-auto sm:max-w-[20vw] text-justify md:ml-8 mt-4 md:mt-0 ${index === currentSlide ? 'fade-up' : ''}`}>
-          <h1 className="sm:text-2xl text-2xl mt-6 max-w-fit pt-10 border-b-4 font-semibold text-white text-center mb-2">
-            {slide.title}
-          </h1>
-          <p className="text-white">{slide.description}</p>
-        </div>
-      </div>
-    </div>
-  ))}
-</Slider>
       </div>
     </div>
   );

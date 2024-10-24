@@ -45,77 +45,105 @@ export default function Form() {
   };
 
   return (
-    <div>
-      <div
-        className="gap-16 pt-0 sm:mt-20 items-center relative overflow-hidden p-6 sm:p-8 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-lg max-w-6xl mx-auto bg-gray-300/45 font-[sans-serif]"
-      >
-        <form onSubmit={handleSubmit}>
-          <div className="space-y-4 mt-2">
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="mb-2 text-sm block font-serif">NOM </label>
-                <input
-                  type='text'
-                  name='name'
-                  value={formData.name}
-                  onChange={handleChange}
-                  className="px-4 py-2.5 text-base bg-white/70 border border-gray-400 rounded-lg w-full outline-none focus:ring-2 focus:ring-[#0B4F48] focus:border-transparent transition-all duration-300"
-                />
-              </div>
-              <div>
-                <label className="mb-2 text-sm block font-serif">EMAIL</label>
-                <input
-                  type='email'
-                  name='email'
-                  value={formData.email}
-                  onChange={handleChange}
-                  className="px-4 py-2.5 text-base bg-white/70 border border-gray-400 rounded-lg w-full outline-none focus:ring-2 focus:ring-[#0B4F48] focus:border-transparent transition-all duration-300"
-                />
-              </div>
-            </div>
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-              <div>
-                <label className="mb-2 text-sm block font-serif">TELEPHONE</label>
-                <input
-                  type='text'
-                  name='phone'
-                  value={formData.phone}
-                  onChange={handleChange}
-                  className="px-4 py-2.5 text-base bg-white/70 border border-gray-400 rounded-lg w-full outline-none focus:ring-2 focus:ring-[#0B4F48] focus:border-transparent transition-all duration-300"
-                />
-              </div>
-              <div>
-                <label className="mb-2 text-sm block font-serif">PROJET</label>
-                <input
-                  type='text'
-                  name='project'
-                  value={formData.project}
-                  onChange={handleChange}
-                  className="px-4 py-2.5 text-base bg-white/70 border border-gray-400 rounded-lg w-full outline-none focus:ring-2 focus:ring-[#0B4F48] focus:border-transparent transition-all duration-300"
-                />
-              </div>
-            </div>
-
-            <label className="mb-2 text-sm block font-serif">MESSAGE</label>
-            <textarea
-              rows={6}
-              name='message'
-              value={formData.message}
-              onChange={handleChange}
-              className="px-4 py-2.5 bg-white/70 text-gray-800 text-sm border border-gray-400 rounded-lg w-full focus:ring-2 focus:ring-[#0B4F48] focus:border-transparent transition-all duration-300 outline-none"
-            ></textarea>
-
-            <div className='flex justify-center items-center'>
-              <button
-                type="submit"
-                className="mt-6 flex items-center font-serif text-lg sm:text-2xl justify-center w-full sm:w-2/3 px-4 py-3 bg-[#3C496E] text-white rounded-lg hover:bg-blue-700 hover:shadow-lg transition-all duration-300"
+    <div
+      className="gap-16 pt-0 sm:mt-20 items-center relative overflow-hidden p-6 sm:p-8 shadow-[0_2px_10px_-3px_rgba(6,81,237,0.3)] rounded-lg max-w-6xl mx-auto bg-white/80  font-[sans-serif]"
+    >
+      <form onSubmit={handleSubmit}>
+        <div className="space-y-4 mt-2">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                htmlFor="name"
+                className="mb-2 text-xl block font-serif text-center font-extrabold text-[#0f04b4] sm:text-left"
               >
-                ENVOYER
-              </button>
+                NOM
+              </label>
+              <input
+                id="name"
+                type="text"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                className="px-4 py-2.5 text-lg bg-white/70 border border-gray-400 rounded-lg w-full outline-none focus:ring-2 focus:ring-[#0B4F48] focus:border-[#0f04b4] transition-all duration-300"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="email"
+                className="mb-2 text-xl block font-serif text-center font-bold text-[#0f04b4] sm:text-left"
+              >
+                EMAIL
+              </label>
+              <input
+                id="email"
+                type="email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                className="px-4 py-2.5 text-lg bg-white/70 border border-gray-400 rounded-lg w-full outline-none focus:ring-2 focus:ring-[#0B4F48] focus:border-[#0f04b4] transition-all duration-300"
+              />
             </div>
           </div>
-        </form>
-      </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            <div>
+              <label
+                htmlFor="phone"
+                className="mb-2 text-xl block font-serif text-center font-bold text-[#0f04b4] sm:text-left"
+              >
+                TELEPHONE
+              </label>
+              <input
+                id="phone"
+                type="text"
+                name="phone"
+                value={formData.phone}
+                onChange={handleChange}
+                className="px-4 py-2.5 text-lg bg-white/70 border border-gray-400 rounded-lg w-full outline-none focus:ring-2 focus:ring-[#0B4F48] focus:border-[#0f04b4] transition-all duration-300"
+              />
+            </div>
+            <div>
+              <label
+                htmlFor="project"
+                className="mb-2 text-xl block font-serif text-center font-bold text-[#0f04b4] sm:text-left"
+              >
+                PROJET
+              </label>
+              <input
+                id="project"
+                type="text"
+                name="project"
+                value={formData.project}
+                onChange={handleChange}
+                className="px-4 py-2.5 text-lg bg-white/70 border border-gray-400 rounded-lg w-full outline-none focus:ring-2 focus:ring-[#0B4F48] focus:border-[#0f04b4] transition-all duration-300"
+              />
+            </div>
+          </div>
+
+          <label
+            htmlFor="message"
+            className="mb-2 text-xl block font-serif text-center font-bold text-[#0f04b4] sm:text-left"
+          >
+            MESSAGE
+          </label>
+          <textarea
+            id="message"
+            rows={6}
+            name="message"
+            value={formData.message}
+            onChange={handleChange}
+            className="px-4 py-2.5 text-lg bg-white/70 text-gray-800 border border-gray-400 rounded-lg w-full focus:ring-2 focus:ring-[#0B4F48] focus:border-[#0f04b4] transition-all duration-300 outline-none"
+          ></textarea>
+
+          <div className='flex justify-center items-center'>
+            <button
+              type="submit"
+              className="mt-6 flex items-center font-serif text-lg sm:text-2xl justify-center w-full sm:w-2/3 px-4 py-3 bg-[#3C496E] text-white rounded-lg hover:bg-blue-700 hover:shadow-lg transition-all duration-300"
+            >
+              ENVOYER
+            </button>
+          </div>
+        </div>
+      </form>
     </div>
   );
 }

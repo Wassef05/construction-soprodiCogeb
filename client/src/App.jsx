@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import Items from './pages/Items';
+import Carrousel from './pages/Carrousel';
+
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import CreatePost from './pages/CreatePost';
@@ -15,6 +17,8 @@ export default function App() {
     <BrowserRouter>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/locaux" element={<Home />} />
+
           <Route path="/items/:id" element={<Items />} />
           <Route path="/login" element={<Login />} />
           

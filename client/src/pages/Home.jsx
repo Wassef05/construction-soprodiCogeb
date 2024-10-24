@@ -1,9 +1,11 @@
 import Card1 from "../components/Card1";
-import Carrousel from "../components/Carrousel";
+import Carrousel from "../pages/Carrousel";
 import Contact from "../components/Contact";
 import Footer from "../components/Footer";
 import HeaderHome from "../components/HeaderHome";
 import NavComp from "../components/NavComp";
+import Map from "../components/Map";
+
 
 export default function Home() {
   return (
@@ -13,6 +15,7 @@ export default function Home() {
       <Card1/>
       <Carrousel/>
       <Contact/>
+      <Map/>
       <Footer/>
     </div>
   )

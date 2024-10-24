@@ -3,8 +3,8 @@ import axios from 'axios';
 import { firebaseApp } from '../firebase';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import { useNavigate } from 'react-router-dom';
-import cov from "../img/CoverHome.png";
-import logo from "../img/Logo.png"
+import {covLarge} from "../img";
+import {Logo} from "../img"
 
 
 const CreatePost = () => {
@@ -74,7 +74,6 @@ const CreatePost = () => {
     uploadTask.on(
       'state_changed',
       snapshot => {
-        // Vous pouvez ajouter des fonctionnalités de progression ici si vous le souhaitez
       },
       error => {
         console.error("Error uploading image:", error);
@@ -95,7 +94,6 @@ const CreatePost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Filtrer les images avec des URL non vides
     const filteredImages = formData.images.filter(image => image.url);
     const cleanedFormData = {
       ...formData,
@@ -115,11 +113,11 @@ const CreatePost = () => {
   return (
     <div className="   ">
             <div
-        style={{ backgroundImage: `url(${cov})` }}
+        style={{ backgroundImage: `url(${covLarge})` }}
         className="bg-cover bg-center bg-no-repeat h-[100vh] opacity-50 w-full fixed -z-10">
         </div>
        <div className=''>
-       <a href="/" className="w-40"><img src={logo} className='mx-10 py-5' /></a>
+       <a href="/" className="w-40"><img src={Logo} className='mx-10 py-5' /></a>
        <h1 className='text-center  text-2xl font-heading font-bold text-black  -mt-16'>Créer Une Poste</h1>
        </div> 
       <form onSubmit={handleSubmit} className="space-y-6 z-50">

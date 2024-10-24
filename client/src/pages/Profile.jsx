@@ -11,7 +11,7 @@ import { useNavigate } from 'react-router-dom';
 import PostCardAdmin from '../components/PostCardAdmin.jsx';
 import Footer from '../components/Footer.jsx';
 import { FaAngleDoubleLeft, FaAngleDoubleRight } from 'react-icons/fa';
-import logo from "../img/Logo.png"
+import {Logo} from "../img"
 
 
 
@@ -257,7 +257,7 @@ const Profile = () => {
           <div className="profile_info p-5 bg-white  w-full  md:col-span-2 lg:col-span-1  md:max-h-full md:min-h-screen h-full col-span-1 rounded-t-md ">
             <form className="w-full" onSubmit={handleSubmit}>
               <div className="mb-3 text-center justify-center items-center">
-                <a href="/" className='mb-16'><img src={logo}/></a>
+                <a href="/" className='mb-16'><img src={Logo}/></a>
                 <div className="image_container  items-center justify-center text-center relative max-w-[100px] mx-auto hidden">
                   <input
                     onChange={(e) => setFile(e.target.files[0])}

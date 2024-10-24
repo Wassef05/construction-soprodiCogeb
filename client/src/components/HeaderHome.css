@@ -1,11 +1,9 @@
 
 
-   /* Police de caractères */
 .simple-font {
   font-family: 'Arial', sans-serif;
 }
 
-/* Container du texte */
 .textDiv {
   display: flex;
   justify-content: center;
@@ -16,14 +14,13 @@
 }
 
 .textDiv h1 {
-  color: #3d3d3d; /* Couleur lisible */
-  font-size: 2rem !important; /* Taille du texte */
+  color: #3d3d3d;
+  font-size: 2rem !important; 
   font-family: 'Arial', sans-serif !important;
   font-weight: 600;
   line-height: 4rem;
 }
 
-/* Animation du curseur qui clignote */
 .cursor {
   animation: blink 1s step-end infinite;
 }
@@ -37,93 +34,84 @@
   }
 }
 
-/* --- MEDIA QUERIES --- */
 
-/* Styles pour les petits écrans (mobile) */
 @media (max-width: 640px) {
   .textDiv h1 {
-      font-size: 1.5rem; /* Réduire la taille du texte sur mobile */
+      font-size: 1.5rem; 
       line-height: 2.5rem;
   }
 
-  /* Positionnement du conteneur du slogan */
   .absolute {
-      bottom: 10px !important; /* Positionnement en bas */
-      left: -10px !important; /* Positionnement à gauche */
-      margin-bottom: 0 !important; /* Supprimer le margin pour éviter un décalage */
+      bottom: 10px !important; 
+      left: -10px !important;
+      margin-bottom: 0 !important;
       margin-left: 0 !important;
   }
 
   .absolute .p-1 {
-      width: 90% !important; /* Largeur adaptée au mobile */
+      width: 90% !important; 
   }
 }
 
-/* Styles pour les tablettes (jusqu'à 1024px) */
 @media (min-width: 641px) and (max-width: 1024px) {
   .textDiv h1 {
-      font-size: 1.75rem; /* Ajuster la taille pour tablette */
+      font-size: 1.75rem;
       line-height: 3rem;
   }
 
   .absolute {
-      bottom: 90px !important; /* Position en bas */
+      bottom: 90px !important; 
       left: 20px !important;
   }
 
   .absolute .p-1 {
-      width: 60% !important; /* Largeur adaptée à la tablette */
+      width: 60% !important; 
   }
 }
 
-/* Styles pour les grands écrans (desktop) */
 @media (min-width: 1025px) {
   .absolute {
-      bottom: 60px !important; /* Position pour les grands écrans */
+      bottom: 60px !important; 
       left: 50px !important;
   }
 
   .absolute .p-1 {
-      width: 36% !important; /* Largeur du conteneur pour desktop */
+      width: 36% !important;
   }
 
   .textDiv h1 {
-      font-size: 2rem; /* Taille du texte normale pour desktop */
+      font-size: 2rem; 
       line-height: 4rem;
   }
 }
-/* --- LOGO --- */
 .logo {
   position: absolute;
   top: 0;
   left: 10px;
 }
 
-/* Taille du logo pour mobile */
+
 @media (max-width: 640px) {
   .logo {
     left: 30px;
-    width: 36px; /* Augmentation de la taille sur mobile */
+    width: 36px;
   }
 }
 
-/* Taille du logo pour tablettes */
 @media (min-width: 641px) and (max-width: 1024px) {
   .logo {
     left: 50px;
-    width: 42px; /* Taille légèrement plus grande sur tablette */
+    width: 42px; 
   }
 }
 
-/* Taille du logo pour desktop */
 @media (min-width: 1025px) {
   .logo {
     left: 30px;
-    width: 48px; /* Augmentation de la taille sur desktop */
+    width: 48px; 
   }
 }
 
-/* --- IMAGE DE COUVERTURE (desktop) --- */
 .bg {
   background-position: center center;
   background-repeat: no-repeat;
@@ -131,19 +119,117 @@
   height: 100vh;
   width: 100%;
 }
-/* Styles pour les petits écrans (mobile) */
 @media (max-width: 640px) {
   .bg {
-    background-size: contain; /* Ajuste l'image pour qu'elle ne soit pas trop zoomée sur mobile */
-    background-position: top center; /* Réajustement du positionnement */
-    height: auto; /* Pour que l'image ne prenne pas 100% de la hauteur sur mobile */
-    min-height: 60vh; /* Assure une hauteur minimale raisonnable */
+    background-size: contain; 
+    background-position: top center; 
+    height: auto; 
+    min-height: 60vh; 
   }
 }
-/* Styles pour les tablettes */
 @media (min-width: 641px) and (max-width: 1024px) {
   .bg {
     background-size: cover;
     background-position: center center;
+  }
+}
+
+.slogan-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  max-width: 80%; 
+  padding: 10px;
+  background-color: rgba(255, 255, 255, 0.7); 
+  border-radius: 0 10px 0 0;
+  z-index: 10; 
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  width: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.slogan-text {
+  font-family: 'Deutschlands', cursive;
+  color: #333; 
+  font-size: 1rem;
+  text-align: left; 
+  text-shadow: none; 
+}
+
+@media (max-width: 320px) {
+  .slogan-text {
+    font-size: 1.25rem;
+  }
+  .slogan-container {
+    max-width: 80%;
+    height: 13%;
+  }
+}
+
+@media (min-width: 321px) and (max-width: 376px) {
+  .slogan-text {
+    font-size: 1.2rem;
+  }
+  .slogan-container {
+    max-width: 67%;
+    height: 15%;
+  }
+}
+
+@media (min-width: 377px) and (max-width: 426px) {
+  .slogan-text {
+    font-size: 1.5rem;
+  }
+  .slogan-container {
+    max-width: 70%;
+    height: 15%;
+
+  }
+}
+
+@media (min-width: 427px) and (max-width: 769px) {
+  .slogan-text {
+    font-size: 1.4rem;
+  }
+  .slogan-container {
+    max-width: 40%;
+    height: 15%;
+
+  }
+}
+
+@media (min-width: 770px) and (max-width: 1024px) {
+  .slogan-text {
+    font-size: 1.5rem;
+  }
+  .slogan-container {
+    max-width: 40%;
+    height: 15%;
+  }
+}
+
+@media (min-width: 1025px) and (max-width: 1440px) {
+  .slogan-container {
+    max-width: 40%;
+    height: 15%;
+
+  }
+  .slogan-text {
+    font-size: 1.9rem;
+  }
+}
+
+@media (min-width: 1441px) {
+
+  .slogan-container {
+    max-width: 40%;
+    height: 15%;
+
+
+  }
+  .slogan-text {
+    font-size: 2.8rem;
   }
 }

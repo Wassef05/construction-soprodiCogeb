@@ -4,7 +4,7 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { firebaseApp } from '../firebase';
 import { getDownloadURL, getStorage, ref, uploadBytesResumable } from 'firebase/storage';
 import cov from "../img/CoverHome.png";
-import logo from "../img/Logo.png"
+import {Logo} from "../img"
 
 
 const UpdatePost = () => {
@@ -109,7 +109,6 @@ const UpdatePost = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // Filtrer les images avec des URL non vides
     const filteredImages = formData.images.filter(image => image.url);
     const cleanedFormData = {
       ...formData,
@@ -134,7 +133,7 @@ const UpdatePost = () => {
         className="bg-cover bg-center bg-no-repeat h-[100vh] opacity-50 w-full fixed -z-10">
         </div>
        <div className=''>
-       <a href="/" className="w-40"><img src={logo} className='mx-10 py-5' /></a>
+       <a href="/" className="w-40"><img src={Logo} className='mx-10 py-5' /></a>
        <h1 className='text-center  text-2xl font-heading font-bold text-black  -mt-16'>Modifier Une Poste</h1>
        </div> 
       <form onSubmit={handleSubmit} className="space-y-6 z-50">

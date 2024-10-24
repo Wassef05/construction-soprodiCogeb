@@ -3,9 +3,10 @@ import { useNavigate } from "react-router-dom";
 import "./HeaderHome.css";
 import { useTypewriter } from "react-simple-typewriter";
 
-import covSmall from "../img/zzzz.jpg";  // Image pour mobile
-import covLarge from "../img/test1.webp";  // Image pour desktop
-import logo from "../img/Logo.png"; // Logo
+import {covSmall} from "../img";  // Image pour mobile
+import {covLarge} from "../img";  // Image pour desktop
+import {Logo} from "../img"; // Logo
+// import {} from '../img'
 
 export default function HeaderHome() {
   const navigate = useNavigate();
@@ -44,26 +45,17 @@ export default function HeaderHome() {
 </picture>
 
       {/* Positionnement du texte */} 
-      <div
-        className="absolute bottom-60 sm:bottom-16 left-0 w-full md:mb-0"
-        style={{ marginBottom: '-90px', marginLeft: '-100px' }}
-      >
-        <div
-          className="p-1 w-3/4 md:w-1/2 sm:p-6 md:p-12 mt-8 ml-4 md:ml-12 bg-[#fff]/30 rounded-lg"
-          style={{ borderTopRightRadius: '50px', width: '36%' }}
-        >
-          <div className="textDiv text-center">
-            <h1 className="simple-font text-bright">
+      <div className="slogan-container  " style={{ borderTopRightRadius: '50px', width: '90%' }} >
+    <h1 className="simple-font text-bright slogan-text">
               {text}
-              <span className="cursor">✎</span>
+              <span className="cursor">🖊</span>
             </h1>
-          </div>
-        </div>
-      </div>
+  </div>
+
 
       {/* Logo positionné en haut à gauche */}
       <img
-        src={logo}
+        src={Logo}
         alt="Logo de l'entreprise"
         className="logo m-4 w-28 sm:w-36 md:w-42 lg:w-48 h-auto"
         loading="lazy"
