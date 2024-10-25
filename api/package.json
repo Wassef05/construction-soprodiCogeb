@@ -2,10 +2,10 @@
   "name": "soprodi",
   "version": "1.0.0",
   "description": "",
-  "main": "functions/api.js",
+  "main": "index.js",
   "scripts": {
-    "dev": "nodemon functions/api.js",
-    "start": "node functions/api.js",
+    "dev": "nodemon index.js",
+    "start": "node index.js",
     "build": "netlify deploy --prod"
   },
   "author": "",
