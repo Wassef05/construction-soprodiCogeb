@@ -1,0 +1,96 @@
+{
+  "navbar": {
+    "home": "Home",
+    "about": "About",
+    "locations": "Locations",
+    "contact": "Contact",
+    "admin": "Admin",
+    "language": "Language"
+  },
+  "headerHome": {
+    "slogan": "Reinvent your factory",
+    "coverImageAlt": "Cover image of the homepage",
+    "logoAlt": "Company logo"
+  },
+  "card1": {
+    "aboutUs": "ABOUT US",
+    "soprodi": "SOPRODI",
+    "description": "is a Real Estate Development Company for Industrial Development, a Limited Liability Company, headquartered at 121 Avenue Hédi Nouira in Sousse. Its main activity is the development of industrial zones and the construction of buildings and factories dedicated to industrial activities.",
+    "modalContentLine1": "Founded in 2006, SOPRODI is the owner of land with a total area of 28,000 square meters in Sahline and Manzel Harb. The company has successfully built and developed 5 facilities rented to foreign companies.",
+    "modalContentLine2": "The company specializes in the development of industrial zones and the construction of factories for national and international businesses.",
+    "modalContentLine3": "Clients include companies such as SOMA, SEMIT, FASITEX, RE BE, Millet Mountain Group, Agro Mélange Technologie, and MED Expo.",
+    "seeMore": "SEE MORE"
+  },
+  "modal": {
+    "aboutUs": "About Us",
+    "company1": "SOMA Company",
+    "company2": "SEMIT Company",
+    "company3": "FASITEX Company",
+    "company4": "RE BE Company",
+    "company5": "Millet Mountain Group Company",
+    "company6": "Agro Mélange Technologie \"AMT\" Company",
+    "company7": "MED Expo Company"
+  },
+    "contact": {
+    "title": "CONTACT",
+    "email": "groupe-cogeb@gmail.com",
+    "phone": "+216 73 323 435",
+    "location": "Avenue de l'environnement, Sousse, Tunisie, 4000"
+  },
+  "form": {
+    "name": "Name",
+    "email": "Email",
+    "phone": "Phone",
+    "project": "Project",
+    "message": "Message",
+    "send": "Send"
+  },
+  "footer": {
+    "address": "SOPRODI, 4000, Avenue de l'environnement\n Sousse, Tunisia",
+    "phone": "+216 73 323 435",
+    "email": "groupe-cogeb@gmail.com",
+    "info": "Information",
+    "about": "About Us",
+    "companyGoal": "Company Objective",
+    "soprodiOffices": "SOPRODI Offices",
+    "contact": "Contact",
+    "usefulLinks": "Useful Links",
+    "quote": "Quote",
+    "privacy": "Privacy Policy",
+    "support": "Support",
+    "followUs": "Follow Us",
+    "socialLinkedin": "LinkedIn",
+    "socialFacebook": "Facebook",
+    "socialInstagram": "Instagram",
+    "rightsReserved": "© 2024 SOPRODI - All rights reserved",
+    "termsConditions": "Terms of Use",
+    "privacyPolicy": "Privacy Policy",
+    "company": "SOPRODI"
+  },
+  "modals": {
+    "Devis": {
+      "title": "Custom Quote Calculation",
+      "description": "At SOPRODI, we understand that each project is unique and requires a personalized approach. That's why we offer a custom quote calculation service to meet your exact needs."
+    },
+    "Confidentialite": {
+      "title": "Privacy Policy",
+      "description": "At SOPRODI, protecting your personal data is our top priority. We are committed to respecting your privacy and handling your information with the utmost care."
+    },
+    "Support": {
+      "title": "Support and Advice",
+      "description": "At SOPRODI, we believe that the success of your project relies on quality support. That's why we offer comprehensive support services to answer all your questions."
+    }
+  }
+,
+"carrousel": {
+  "title": "LOCATIONS",
+  "loading": "Loading...",
+  "noContent": {
+    "title": "No content available at the moment.",
+    "description": "Please check back later or contact us for more information."
+  }
+}
+  ,
+    "edit": "Edit",
+  "delete": "Delete"
+}

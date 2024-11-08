@@ -2,13 +2,15 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import Slider from "react-slick";
 import PostCard from "../components/PostCard";
+import { useTranslation } from "react-i18next";
 
 const NextArrowSVG = (props) => {
   const { onClick } = props;
   return (
     <div
       onClick={onClick}
-      className="next-arrow cursor-pointer  lg:right-0 top-1/2 transform -translate-y-1/2 z-10 "style={{right:0}}
+      className="next-arrow cursor-pointer  lg:right-0 top-1/2 transform -translate-y-1/2 z-10 "
+      style={{ right: 0 }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -28,7 +30,8 @@ const PrevArrowSVG = (props) => {
   return (
     <div
       onClick={onClick}
-      className="prev-arrow cursor-pointer  lg:-left-3 top-1/2 transform -translate-y-1/2 z-10"style={{left:-7}}
+      className="prev-arrow cursor-pointer  lg:-left-3 top-1/2 transform -translate-y-1/2 z-10"
+      style={{ left: -7 }}
     >
       <svg
         xmlns="http://www.w3.org/2000/svg"
@@ -44,6 +47,7 @@ const PrevArrowSVG = (props) => {
 };
 
 export default function Carrousel() {
+  const { t } = useTranslation();  // Hook pour récupérer la traduction
   const [loading, setLoading] = useState(true);
   const [postsListings, setPostsListings] = useState([]);
   const navigate = useNavigate();
@@ -64,11 +68,7 @@ export default function Carrousel() {
             setPostsListings([]);
           }
         } else {
-          console.error(
-            "Unexpected response or content type:",
-            contentType,
-            await res.text()
-          );
+          console.error("Unexpected response or content type:", contentType, await res.text());
           setPostsListings([]);
         }
       } catch (error) {
@@ -86,7 +86,7 @@ export default function Carrousel() {
     slidesToShow: 7,
     slidesToScroll: 1,
     autoplay: true,
-    autoplaySpeed: 2500,
+    autoplaySpeed: 3000,
     nextArrow: <NextArrowSVG />,
     prevArrow: <PrevArrowSVG />,
     responsive: [
@@ -117,14 +117,14 @@ export default function Carrousel() {
   };
 
   if (loading) {
-    return <div className="text-center mt-10">Loading...</div>;
+    return <div className="text-center mt-10">{t('carrousel.loading')}</div>;
   }
 
   if (!Array.isArray(postsListings) || postsListings.length === 0) {
     return (
       <div className="text-center mt-10 text-gray-600">
-        <p className="text-lg font-semibold">Aucun contenu disponible pour le moment.</p>
-        <p className="text-sm">Veuillez revenir plus tard ou contactez-nous pour plus d'informations.</p>
+        <p className="text-lg font-semibold">{t('carrousel.noContent.title')}</p>
+        <p className="text-sm">{t('carrousel.noContent.description')}</p>
       </div>
     );
   }
@@ -141,7 +141,7 @@ export default function Carrousel() {
       }}
     >
       <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#0f04b4] text-center mb-6 sm:mb-8">
-        LOCAUX
+        {t('carrousel.title')}
       </h1>
       <div className="mx-4 sm:mx-6 lg:mx-8 relative">
         <Slider {...settings} className="z-10 relative px-4 sm:px-6 gap-3 pb-20">

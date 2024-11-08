@@ -2,8 +2,10 @@ import { useState, useEffect } from 'react';
 import emailjs from 'emailjs-com';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import { useTranslation } from 'react-i18next'; // Import the translation hook
 
 export default function Form() {
+  const { t } = useTranslation(); // Access the translation function
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -56,7 +58,7 @@ export default function Form() {
                 htmlFor="name"
                 className="mb-2 text-xl block font-serif text-center font-extrabold text-[#0f04b4] sm:text-left"
               >
-                NOM
+                {t("form.name")} {/* Name from translation */}
               </label>
               <input
                 id="name"
@@ -72,7 +74,7 @@ export default function Form() {
                 htmlFor="email"
                 className="mb-2 text-xl block font-serif text-center font-bold text-[#0f04b4] sm:text-left"
               >
-                EMAIL
+                {t("form.email")} {/* Email from translation */}
               </label>
               <input
                 id="email"
@@ -90,7 +92,7 @@ export default function Form() {
                 htmlFor="phone"
                 className="mb-2 text-xl block font-serif text-center font-bold text-[#0f04b4] sm:text-left"
               >
-                TELEPHONE
+                {t("form.phone")} {/* Phone from translation */}
               </label>
               <input
                 id="phone"
@@ -106,7 +108,7 @@ export default function Form() {
                 htmlFor="project"
                 className="mb-2 text-xl block font-serif text-center font-bold text-[#0f04b4] sm:text-left"
               >
-                PROJET
+                {t("form.project")} {/* Project from translation */}
               </label>
               <input
                 id="project"
@@ -123,7 +125,7 @@ export default function Form() {
             htmlFor="message"
             className="mb-2 text-xl block font-serif text-center font-bold text-[#0f04b4] sm:text-left"
           >
-            MESSAGE
+            {t("form.message")} {/* Message from translation */}
           </label>
           <textarea
             id="message"
@@ -139,7 +141,7 @@ export default function Form() {
               type="submit"
               className="mt-6 flex items-center font-serif text-lg sm:text-2xl justify-center w-full sm:w-2/3 px-4 py-3 bg-[#3C496E] text-white rounded-lg hover:bg-blue-700 hover:shadow-lg transition-all duration-300"
             >
-              ENVOYER
+              {t("form.send")} {/* Send button from translation */}
             </button>
           </div>
         </div>

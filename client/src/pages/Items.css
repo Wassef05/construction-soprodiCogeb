@@ -75,12 +75,14 @@ html {
   }
 
 .mobile-indicators {
-  display: none; 
+  display: none; /* Hidden by default */
   position: absolute;
-  top: 30%; 
-  justify-content: space-between; 
-  transform: translateY(-50%); 
-  z-index: 10; 
+  top: 40%; /* Vertically centered */
+  width: 100%; /* Spanning the entire width */
+  justify-content: space-between; /* Indicators are spread apart */
+  padding: 0 0px; /* Adjust padding to avoid edges */
+  transform: translateY(-50%);
+  z-index: 10;
 }
 
 .indicator {
@@ -97,5 +99,8 @@ html {
 @media (max-width: 768px) {
   .mobile-indicators {
     display: flex; 
+  }
+  .arrow {
+    display: none;
   }
 }

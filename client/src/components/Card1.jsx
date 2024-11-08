@@ -1,18 +1,20 @@
 import React, { useState } from "react";
-import {CoverCard} from "../img";
-import {Car} from "../img";
+import { CoverCard } from "../img";
+import { Car } from "../img";
 import ModalComponent from "./CustomModal";
+import { useTranslation } from "react-i18next"; // Import de i18next
 
 export default function Card1() {
   const [isModalOpen, setIsModalOpen] = useState(false);
+  const { t } = useTranslation(); // Utilisation de useTranslation pour les traductions
 
   const openModal = () => setIsModalOpen(true);
   const closeModal = () => setIsModalOpen(false);
 
   const modalContent = `
-    SOPRODI est une Société de Promotion Immobilière pour le Développement Industriel, Société à Responsabilité Limitée, dont le Siège Social sis à 121 Avenue Hédi Nouira à Sousse, qui a pour activité principale l'aménagement des zones Industrielles et la Construction des bâtiments et usines attribuées aux activités Industrielles.
-    
-    Créée en 2006, la Société SOPRODI Propriétaire de Terrains d'une superficie Totale de 28000 M2 à Sahline et Manzel Harb la Société a réussi à Construire et aménager 5 Locaux Loués à des Sociétés Étrangères :
+    ${t('card1.modalContentLine1')}
+    ${t('card1.modalContentLine2')}
+    ${t('card1.modalContentLine3')}
   `;
 
   return (
@@ -42,21 +44,16 @@ export default function Card1() {
           }}
         >
           <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold text-[#0f04b4] text-center sm:text-left mb-6 sm:mb-8">
-            À PROPOS
+            {t('card1.aboutUs')} {/* Traduction du titre */}
           </h1>
           <p className="font-playfair text-sm sm:text-base text-justify mb-4 leading-relaxed text-gray-800">
-            <strong>SOPRODI</strong> est une Société de Promotion Immobilière
-            pour le Développement Industriel, Société à Responsabilité Limitée,
-            dont le Siège Social sis à 121 Avenue Hédi Nouira à Sousse, qui a
-            pour activité principale l'aménagement des zones Industrielles et la
-            Construction des bâtiments et usines attribuées aux activités
-            Industrielles.
+            <strong>{t('card1.soprodi')}</strong> {t('card1.description')}
           </p>
-          <p className="mt-4 text-lg  sm:text-xl flex items-center gap-2">
-            <span className="text-[#0f04b4]  cursor-pointer" onClick={openModal}>
-              VOIR PLUS
+          <p className="mt-4 text-lg sm:text-xl flex items-center gap-2">
+            <span className="text-[#0f04b4] cursor-pointer" onClick={openModal}>
+              {t('card1.seeMore')} {/* Traduction du bouton */}
             </span>
-            <span className="text-#0f04b4] text-lg">&#9654;</span>
+            <span className="text-[#0f04b4] text-lg">&#9654;</span>
           </p>
         </div>
 

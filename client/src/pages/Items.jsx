@@ -5,9 +5,11 @@ import Slider from "react-slick";
 import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next"; // Import the useTranslation hook
 import "./Items.css"; 
 
 function Items() {
+  const { t } = useTranslation(); // Get the translation function
   const { currentUser } = useSelector((state) => state.user);
   const navigate = useNavigate();
   const { id } = useParams();
@@ -84,13 +86,13 @@ function Items() {
             onClick={() => navigate(`/update_post/${id}`)}
             className="bg-blue-900 rounded-md py-2 px-7 font-heading text-white hover:opacity-95 text-sm"
           >
-            Modifier
+            {t('edit')} {/* Use translation key for "Edit" */}
           </button>
           <button
             onClick={() => handlePostDelete(id)}
             className="bg-red-800 py-2 px-5 rounded-md font-heading text-white hover:opacity-95 text-sm z-10"
           >
-            Supprimer
+            {t('delete')} {/* Use translation key for "Delete" */}
           </button>
         </div>
       ) : null}
@@ -138,7 +140,6 @@ function Items() {
           ))}
         </Slider>
 
-       
         <div className="mobile-indicators">
           <div className="indicator left" onClick={() => {
             sliderRef.current.slickPrev(); 

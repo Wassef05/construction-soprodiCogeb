@@ -1,13 +1,16 @@
 import React, { useEffect } from "react";
 import Modal from "react-modal";
+import { useTranslation } from "react-i18next"; // Import de i18next
 
 Modal.setAppElement("#root");
 
 export default function ModalComponent({ isOpen, onClose, content }) {
+  const { t } = useTranslation(); // Utilisation de useTranslation pour les traductions
+
   useEffect(() => {
     if (isOpen) {
       document.body.classList.add("modal-open");
-      document.body.classList.add("overflow-hidden"); 
+      document.body.classList.add("overflow-hidden");
     } else {
       document.body.classList.remove("modal-open");
       document.body.classList.remove("overflow-hidden");
@@ -44,8 +47,6 @@ export default function ModalComponent({ isOpen, onClose, content }) {
           textAlign: 'left',
           zIndex: 10000, 
           overflow: 'auto',
-          
-          // Ajout pour la version mobile
           maxHeight: '80vh',
           paddingBottom: '20px',
         },
@@ -60,21 +61,23 @@ export default function ModalComponent({ isOpen, onClose, content }) {
           ✕
         </button>
 
-        <h2 className="text-2xl md:text-3xl text-[#0f04b4] font-semibold mb-4">À propos de nous</h2>
+        <h2 className="text-2xl md:text-3xl text-blue-500 font-semibold mb-4">
+          {t("modal.aboutUs")} {/* Traduction du titre */}
+        </h2>
         <div className="text-sm">
           {content.split('\n').map((text, index) => (
             <p key={index} className="mb-2">
               {text}
             </p>
           ))}
-          <ul className="list-disc ml-5 text-[#0f04b4] mt-4">
-            <li>La société SOMA</li>
-            <li>La Société SEMIT</li>
-            <li>La Société FASITEX</li>
-            <li>La Société RE BE</li>
-            <li>La Société Millet Mountain Group</li>
-            <li>La Société Agro Mélange Technologie « AMT »</li>
-            <li>La Société MED Expo</li>
+          <ul className="list-disc ml-5 text-blue-500 mt-4">
+            <li>{t("modal.company1")}</li>
+            <li>{t("modal.company2")}</li>
+            <li>{t("modal.company3")}</li>
+            <li>{t("modal.company4")}</li>
+            <li>{t("modal.company5")}</li>
+            <li>{t("modal.company6")}</li>
+            <li>{t("modal.company7")}</li>
           </ul>
         </div>
       </div>

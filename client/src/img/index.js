@@ -11,6 +11,9 @@ import Logo from './Logo.png';
 import tablette from './tablette.png';
 import test1 from './test1.webp';
 import covSmall from './zzzz.jpg';
+import fr from './fr.jpg';
+import eng from './eng.jpg';
+
 
 
 export {
@@ -31,4 +34,6 @@ export {
   tablette,
   test1,
   covSmall,
+  fr,
+  eng
 };
